@@ -1,0 +1,28 @@
+eclipse writhing
+
+step 1 - python install - https://www.python.org/
+
+step 2 - eclipse install - https://eclipse.org/
+
+step 3 - PyDev plug-in install
+	eclipse menu - Help > Install New Software... >
+	add Work with >
+		Name : PyDev
+		Location : http://pydev.org/updates
+	PyDev checked >
+	run > run > auto restart eclipse
+step 4 - interpreter setting
+	eclipse menu - Windows > Preferences
+		left tab - PyDev > Interpeters > Python Interpreter
+		Quick Auto-Config button Click > OK button click
+step 5 - system environmental variable setting
+	path - python install location setting
+step 6 - pip install - version 2.9 ~ auto install
+	system environmental variable setting
+	path - python install location forder/Scripts
+step 7 - console test
+	console - pip, python, python exit > exit()
+
+hello world start!!
+
+@author devleesk
