@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
 import requests
-import sys
 from bs4 import BeautifulSoup
 
 page_num = 1
