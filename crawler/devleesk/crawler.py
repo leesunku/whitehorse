@@ -3,7 +3,7 @@ import requests
 import os
 from bs4 import BeautifulSoup
 path = os.getcwd()
-    
+
 def get_html(url):
     return requests.get(url).text
 
@@ -18,6 +18,19 @@ def parser_chosun_news_url(parser_data):
         dt = dl.find("dt")
         a_href = dt.find("a")["href"]
         result.append(a_href)
+    return result
+
+def parser_chosun_news_title(parser_data):
+    h1 = parser_data.find("h1", {"id" : "news_title_text_id"})
+    return h1.text
+
+def parser_chosun_news_content(parser_data):
+    div = parser_data.find("div", {"id" : "news_body_id"})
+    content_divs = div.find_all("div", {"class": "par"})
+    result = []
+    for content_div in content_divs:
+        content_text = content_div.text
+        result.append(content_text)
     return result
 
 def make_text_file(urls, page):
@@ -39,8 +52,6 @@ def crawler_run(page):
     urls = parser_chosun_news_url(parser_data)
     make_text_file(urls, page)
     
-def main():
-    max_page = 255
-    for i in range(1, max_page):
-        crawler_run(str(i))
-main()
+def get_news_url(file_path):
+    f = open(file_path, "r")
+    return f.readline()
