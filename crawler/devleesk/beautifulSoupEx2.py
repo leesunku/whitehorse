@@ -40,7 +40,7 @@ def crawler_run(page):
     make_text_file(urls, page)
     
 def main():
-    max_page = 255
+    max_page = 3
     for i in range(1, max_page):
         crawler_run(str(i))
 main()

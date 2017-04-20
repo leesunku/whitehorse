@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 path = os.getcwd()
 
 def get_html(url):
-    return requests.get(url).text
+    return requests.get(url).content
 
 def parser(html):
     return BeautifulSoup(html,"html.parser")
