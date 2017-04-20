@@ -21,12 +21,12 @@ def parser_chosun_news_url(parser_data):
     return result
 
 def make_text_file(urls, page):
-    newpath = path + "\\news\\" + page 
+    newpath = path + "/news/" + page 
     if not os.path.exists(newpath):
         os.makedirs(newpath)
     index = 0
     for url in urls:
-        f = open(path + "\\news\\" + page + "\\" + "news" + str(index) + ".txt", 'w')
+        f = open(path + "/news/" + page + "/" + "news" + str(index) + ".txt", 'w')
         f.write(url)
         f.close()
         index += 1
