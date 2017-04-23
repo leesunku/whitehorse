@@ -3,7 +3,7 @@ import crawler;
 import os
 path = os.getcwd()
 
-def main():
+if __name__ == "__main__":
     page = 3
     idx = 3
     newpath = path + "\\news\\" + str(page) + "\\" + "news" + str(idx) + ".txt"
@@ -16,4 +16,3 @@ def main():
     contents = crawler.parser_chosun_news_content(parser_data)
     for content in contents:
         print("content - " + content)
-main()
