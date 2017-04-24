@@ -1,0 +1,9 @@
+create_url_and_html_file() <= write url file, html file
+	- setting params 
+		- start_page : start_page ( default : 1)
+		- page_length : page_length ( default : 5)
+	
+	
+read_html() <= read html
+	- setting params 
+		- read_idx : forEach ( default : 1)
