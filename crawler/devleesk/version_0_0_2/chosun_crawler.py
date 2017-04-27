@@ -8,7 +8,7 @@ def get_html_for_url(url):
     return requests.get(url).content
 
 def get_html_for_file(path):
-    return read_file(path)
+    return read_file(path) 
 
 def write_file(dir_path, file_name, data):
     if not os.path.exists(dir_path):

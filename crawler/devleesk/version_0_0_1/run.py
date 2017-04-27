@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 path = os.getcwd()
 #max_page = 5
-page_length = 5
+page_length = 10
 start_page = 1
 news_url = "http://news.chosun.com/svc/list_in/list.html?pn="
 # write url file, html file
@@ -21,7 +21,6 @@ def create_url_and_html_file():
             
             single_news_html = chosun_crawler.get_html_for_url(url)
             single_news_parser_data = chosun_crawler.html_parser(single_news_html)
-            print(single_news_parser_data)
             
             url_dir_path = path + "/url/page_" + str(page) + "/" 
             url_file_name = "url" + str(idx) + ".txt"
@@ -34,15 +33,21 @@ def create_url_and_html_file():
             idx += 1
 
 # read html
-def read_html():
-    read_idx = 1;
-    file_path = path + "/html/page_" + str(start_page) + "/html_" + str(read_idx) + ".txt" 
+#def read_html():
+#    read_idx = 1;
+#    file_path = path + "/html/page_" + str(start_page) + "/html_" + str(read_idx) + ".txt" 
+#    return chosun_crawler.get_html_for_file(file_path)
+
+def read_html(page, idx):
+    file_path = path + "/html/page_" + str(page) + "/html_" + str(idx) + ".txt" 
     return chosun_crawler.get_html_for_file(file_path)
+
 if __name__ == "__main__":            
-    #create_url_and_html_file()
-    html = read_html()
-    parser_data = chosun_crawler.html_parser(html)
-    # code...
-    title = chosun_crawler.get_news_title(parser_data)
-    print(title)
-    # code...
+#    create_url_and_html_file()
+#    html = read_html()
+    for page in range(start_page, start_page + page_length):
+        for idx in range(0, 10):
+            print(idx)
+            html = read_html(page, idx)
+            parser_data = chosun_crawler.html_parser(html)
+            title = chosun_crawler.get_news_title(parser_data)

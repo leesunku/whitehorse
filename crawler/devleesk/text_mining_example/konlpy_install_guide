@@ -1,0 +1,16 @@
+window 기준
+
+step 1. 오라클에서 java 1.7 이상 설치 (파이썬과 bit 같아야함)
+
+step 2. # http://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype 에서 jpype 다운 버전 확인 꼭
+
+step 3. 받은 jpype 경로에서 pip install Jpype...ver 으로 인스톨
+
+step 4. 갈 길이 멀다 잘 따라와 pip install 로 아래 설치
+# pip install numpy
+# pip install scipy
+# pip install -U gensim
+# pip install nltk 
+# pip install konlpy 
+# pip install twython 
+# pip install matplotlib
