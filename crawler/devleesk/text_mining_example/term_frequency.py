@@ -36,7 +36,6 @@ t = Twitter()
 keys1 = t.morphs(document1)
 keys2 = t.morphs(document2)
 keys3 = t.morphs(document3)
-
 def tokenize(doc):
     return ['/'.join(t) for t in t.pos(doc, norm=True, stem=True)]
 
@@ -53,9 +52,6 @@ tokens = [t for d in documents for t in d]
 #print(tokens)
 #print(len(tokens))
 text = nltk.Text(tokens, name='NMSC')
-print(text)
-print(len(text.tokens))
-print(len(set(text.tokens)))
 #pprint(text.vocab().most_common(10))
 train_docs  = text.vocab().most_common(20)
 print(train_docs)
@@ -64,9 +60,9 @@ print(train_docs)
 #text.plot(20)
 # 플롯 차트 글씨 깨짐
 """
-plot 그리는 부분 font 설정 해줘야 안 깨지니까 참고 font_fname 에 경로에 fonts 가 있어야 해, ttc 파일일 수 도 있다.
+#plot 그리는 부분 font 설정 해줘야 안 깨지니까 참고 font_fname 에 경로에 fonts 가 있어야 해, ttc 파일일 수 도 있다.
 from matplotlib import font_manager, rc
-font_fname = 'C:\Windows\Fonts\H2GTRE.TTF'
+font_fname = 'C:\Windows\Fonts\H2PORL.TTF'
 font_name = font_manager.FontProperties(fname=font_fname).get_name()
 rc('font', family=font_name)
 text.plot(20)

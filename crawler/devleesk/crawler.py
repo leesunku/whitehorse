@@ -32,7 +32,9 @@ def parser_chosun_news_content(parser_data):
         content_text = content_div.text
         result.append(content_text)
     return result
-
+def parser_chosun_news_date(parser_data):
+    p = parser_data.find("p", {"id" : "date_text"})
+    return p.text
 def make_text_file(urls, page):
     newpath = path + "/news/" + page 
     if not os.path.exists(newpath):
@@ -40,6 +42,16 @@ def make_text_file(urls, page):
     index = 0
     for url in urls:
         f = open(path + "/news/" + page + "/" + "news" + str(index) + ".txt", 'w')
+        f.write(url)
+        f.close()
+        index += 1
+def make_text_real_file(urls, page):
+    newpath = path + "/news/" + page 
+    if not os.path.exists(newpath):
+        os.makedirs(newpath)
+    index = 0
+    for url in urls:
+        f = open(path + "/news/" + page + "/" + "real_news" + str(index) + ".txt", 'w')
         f.write(url)
         f.close()
         index += 1

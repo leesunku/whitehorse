@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 import requests
 from bs4 import BeautifulSoup
-
 page_num = 1
 url = "http://news.chosun.com/svc/list_in/list.html?pn=1"
 #url = "http://news.joins.com/politics/nk/list/1"

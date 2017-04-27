@@ -18,7 +18,6 @@ doc1 = """배우 남궁민(39)이 SBS TV 드라마 '조작'(극본 김현정, �
 
 import nltk
 import re
-from konlpy.corpus import kobill
 from konlpy.tag import Twitter
 
 def special_haracter_remove(text):
