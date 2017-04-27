@@ -57,14 +57,14 @@ print(text)
 print(len(text.tokens))
 print(len(set(text.tokens)))
 #pprint(text.vocab().most_common(10))
-train_docs  = text.vocab().most_common(10)
-
+train_docs  = text.vocab().most_common(20)
+print(train_docs)
 
 # plot - pip install matplotlib
 #text.plot(20)
 # 플롯 차트 글씨 깨짐
 """
-plot 그리는 부분
+plot 그리는 부분 font 설정 해줘야 안 깨지니까 참고 font_fname 에 경로에 fonts 가 있어야 해, ttc 파일일 수 도 있다.
 from matplotlib import font_manager, rc
 font_fname = 'C:\Windows\Fonts\H2GTRE.TTF'
 font_name = font_manager.FontProperties(fname=font_fname).get_name()
