@@ -24,12 +24,12 @@ class ChosunData(DataComponent):
         }
 
     def export_to_str(self):
-        order_content = ["id", "url", "title", "date", "category", "date"]
+        order_content = ["id", "url", "title", "content", "category", "date"]
         export_text = ""
         export_format = "{}: {}".format
         for key in order_content:
             text = export_format(key, self.contents[key])
-            export_text += text
+            export_text += text + "\n\n"
 
         return export_text
         
